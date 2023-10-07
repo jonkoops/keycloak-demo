@@ -1,0 +1,11 @@
+html {
+  font-family: sans-serif;
+}
+
+.todo-list-item {
+  margin-bottom: 1rem;
+}
+
+.todo-list-item--completed .todo-list-item__title {
+  text-decoration: line-through;
+}

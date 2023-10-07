@@ -1,0 +1,5 @@
+[
+  { "id": "2a6e4c21-48ff-49e2-a9eb-bc253ffa6efd", "title": "Do the laundry", "isCompleted": false },
+  { "id": "c1288926-a5d8-4ebb-81c3-0ae927a53181", "title": "Prepare dinner", "isCompleted": false },
+  { "id": "48019903-94ca-4d6a-baf3-aa8ce5c46302", "title": "Walk the dog", "isCompleted": true }
+]
