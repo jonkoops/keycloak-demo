@@ -1,25 +1,25 @@
 import express from "express";
-import { randomUUID } from "node:crypto";
 import { createTodo, deleteTodo, getTodos, updateTodo } from "./db.js";
+import { protect } from "./protect.js";
 
 const PORT = 3000;
 const app = express();
 
 app.use(express.json());
 
-app.get("/todos", (req, res) => {
+app.get("/todos", protect("view-todos"), async (req, res) => {
   res.json(getTodos());
 });
 
-app.post("/todos", (req, res) => {
+app.post("/todos", protect("create-todos"), (req, res) => {
   res.json(createTodo(req.body));
 });
 
-app.patch("/todos/:id", (req, res) => {
+app.patch("/todos/:id", protect("update-todos"), (req, res) => {
   res.json(updateTodo(req.params.id, req.body));
 });
 
-app.delete("/todos/:id", (req, res) => {
+app.delete("/todos/:id", protect("delete-todos"), (req, res) => {
   res.json(deleteTodo(req.params.id));
 });
 

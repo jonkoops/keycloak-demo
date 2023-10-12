@@ -1,3 +1,5 @@
+import { keycloak } from "../auth.js";
+
 export interface Todo {
   id: number;
   title: string;
@@ -34,7 +36,9 @@ async function fetchJson<T>(url: string, init?: RequestInit): Promise<T> {
 }
 
 async function fetchWithError(url: string, init?: RequestInit) {
-  const response = await fetch(url, init);
+  const headers = new Headers(init?.headers);
+  headers.append("Authorization", `Bearer ${keycloak.token}`);
+  const response = await fetch(url, { ...init, headers });
 
   if (!response.ok) {
     throw new Error("Response is not ok");
