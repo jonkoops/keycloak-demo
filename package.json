@@ -19,7 +19,7 @@
     "nodemon": "^3.0.1",
     "tar-fs": "^3.0.4",
     "typescript": "^5.2.2",
-    "vite": "^4.5.2"
+    "vite": "^4.5.3"
   },
   "dependencies": {
     "classnames": "^2.3.2",
